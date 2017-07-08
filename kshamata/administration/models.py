@@ -33,12 +33,13 @@ class PlacementDetails(models.Model):
 
 class shelterlife(models.Model):
 	uid = models.OneToOneField(PersonalInfo)
-	#location
+	longitude = models.FloatField(default = 0.0)
+	lattitude = models.FloatField(default = 0.0)
 	shared = models.BooleanField()
 	avgexpense = models.IntegerField(max_length = 6)
 	savings = models.IntegerField(max_length = 6)
-	#relation with roommates
-	#relation with neighbours
+	relationwithroommates = models.FloatField(default = 0.0)
+	relationwithneighbours = models.FloatField(default = 0.0)
 
 
 class activity(models.Model):
