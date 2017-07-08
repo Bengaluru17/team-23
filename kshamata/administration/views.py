@@ -12,7 +12,7 @@ from django.contrib.auth import (
     user_login_failed,
     authenticate,
 )
-from django.utils import simplejson as json 
+import json 
 # Create your views here.
 
 
@@ -24,9 +24,9 @@ def index(request):
 
 def login(request):
    # username = json.load(request.POST)
-    json_object = json.loads(request.body)
-    username=json_object["username"]
-    password = json_object["password"]
+    
+    username=request.POST.get('username','')
+    password = request.POST.get('password','')
     print username,password
     user = authenticate(username=username, password=password)
     print user
