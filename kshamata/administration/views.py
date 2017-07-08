@@ -12,7 +12,7 @@ from django.contrib.auth import (
     user_login_failed,
     authenticate,
 )
-import json
+from django.utils import simplejson as json 
 # Create your views here.
 
 
