@@ -18,6 +18,11 @@ from . import views
 
 
 urlpatterns = [
+<<<<<<< HEAD
     url(r'$', views.index, name="index"),
     # url(r'phptest/$', views.phptest, name="php"),
+=======
+    url(r'^index/$', views.index, name="index"),
+    url(r'login/$', views.login, name="login"),
+>>>>>>> 1cc8fc0dae030e4b865e57eeb1ea3e905df57f7e
 ]
