@@ -47,12 +47,13 @@ class activity(models.Model):
 	institution = models.CharField(max_length = 20)
 	startdate = models.DateField(auto_now_add = True,auto_now = False)
 	enddate = models.DateField(auto_now_add = True,auto_now = False)
-	#duration 
+	duration = models.IntegerField(max_length = 20)
 	natureofactivity =  models.CharField(max_length=100)
 	noofwomen =  models.IntegerField(max_length = 100)
 	expectedoutcome = models.CharField(max_length=100)
 	obtainedoutcome = models.CharField(max_length=100)
 	amountspend = models.IntegerField(max_length = 6)
+
 	
 
 
