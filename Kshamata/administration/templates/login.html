@@ -10,11 +10,11 @@
     
     <title>Kshamata Login</title>
 	     <!-- Bootstrap -->
-    <link href="bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="bower_components/bootstrap/dist/css/bootstrap-theme.min.css" rel="stylesheet">
-	<link href="css/mystyles.css" rel="stylesheet">
-	<link href="bower_components/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-	<link href="css/bootstrap-social.css" rel="stylesheet">
+    <link href="{% static "bower_components/bootstrap/dist/css/bootstrap.min.css" %}" rel="stylesheet">
+    <link href="{% static "bower_components/bootstrap/dist/css/bootstrap-theme.min.css" %}" rel="stylesheet">
+	<link href="{% static "css/mystyles.css" %}" rel="stylesheet">
+	<link href="{% static "bower_components/font-awesome/css/font-awesome.min.css" %}" rel="stylesheet">
+	<link href="{% static "css/bootstrap-social.css" %}" rel="stylesheet">
 
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -32,7 +32,7 @@
 	<div class="col-sm-12 col-md-8 col-xs-8">
 		<div class="span12">
 			<form class="form-horizontal" action='' method="POST">
-			<img src="img/logo.jpg"/>
+			<img src="{% static "img/logo.jpg" %}"/>
 			  <fieldset>
 			    <div id="legend">
 			      <legend class=""><h2>Login</h2></legend>

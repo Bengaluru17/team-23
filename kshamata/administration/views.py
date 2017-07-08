@@ -17,9 +17,7 @@ import json
 
 
 def index(request):
-    return JsonResponse({
-        "count": 1,
-    })
+    return render(request,"index.html")
 
 
 def login(request):
