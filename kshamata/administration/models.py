@@ -31,10 +31,10 @@ class PlacementDetails(models.Model):
 	expectations = models.CharField(max_length=100)
 
 
-'''class shelterlife(models.Model):
+class shelterlife(models.Model):
 	uid = models.OneToOneField(PersonalInfo)
 	#location
-	shared = models.Boolean()
+	shared = models.BooleanField()
 	avgexpense = models.IntegerField(max_length = 6)
 	savings = models.IntegerField(max_length = 6)
 	#relation with roommates
@@ -51,7 +51,7 @@ class activity(models.Model):
 	noofwomen =  models.IntegerField(max_length = 100)
 	expectedoutcome = models.CharField(max_length=100)
 	obtainedoutcome = models.CharField(max_length=100)
-	amountspend = models.IntegerField(max_length = 6)'''
+	amountspend = models.IntegerField(max_length = 6)
 	
 
 
