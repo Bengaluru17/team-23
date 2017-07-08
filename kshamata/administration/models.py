@@ -12,3 +12,10 @@ class PersonalInfo(models.Model):
     photo = models.ImageField(upload_to="profile/img")
     education_level = models.CharField(max_length=30)
     date_since_joining = models.DateField(auto_now_add=True, auto_now=False)
+
+
+class TrainingDetails(models.Model):
+    uid = models.OneToOneField(PersonalInfo)
+    life_skills = models.CharField(max_length=40)
+    vocational_skills = models.CharField(max_length=200)
+    further_education = models.CharField(max_length=100)
