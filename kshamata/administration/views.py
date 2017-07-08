@@ -2,9 +2,9 @@
 from __future__ import unicode_literals
 from django.shortcuts import HttpResponse
 from django.shortcuts import render
-from django.http import JsonResponse
+from django.http import JsonResponse, Http404
 from django.contrib.auth import (
-    login,
+    login as login_auth,
     logout,
     get_user_model,
     user_logged_in,
@@ -12,6 +12,7 @@ from django.contrib.auth import (
     user_login_failed,
     authenticate,
 )
+import json
 # Create your views here.
 
 
@@ -22,12 +23,17 @@ def index(request):
 
 
 def login(request):
-    username = request.POST.get("username")
-    password = request.POST.get("password")
+   # username = json.load(request.POST)
+    json_object = json.loads(request.body)
+    username=json_object["username"]
+    password = json_object["password"]
+    print username,password
     user = authenticate(username=username, password=password)
-    if user is not None:
-        print(user_logged_in)
+    print user
+    if user:
+	login_auth(request, user)
+	return JsonResponse({"id":request.user.id})
     else:
-        print user_login_failed
-    return 1
+        return JsonResponse({"result":404})
+    return JsonResponse({"ok":"ok got it"})
 
