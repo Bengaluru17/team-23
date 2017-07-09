@@ -17,9 +17,7 @@ import json
 
 
 def index(request):
-    return JsonResponse({
-        "count": 1,
-    })
+    return render(request,"dashboard.html")
 
 
 def login(request):
