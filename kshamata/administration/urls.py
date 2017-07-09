@@ -23,6 +23,9 @@ urlpatterns = [
     # url(r'phptest/$', views.phptest, name="php"),
 
     url(r'^index/$', views.index, name="index"),
+    url(r'^report/$', views.report, name="report"),
+    url(r'^person/$', views.report_person, name="report_person"),
+    url(r'^post_data/$', views.post_data_from_app, name="post_data"),
     url(r'login/$', views.login, name="login"),
 
 ]

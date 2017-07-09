@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+{% block content %}
+    <h2>Search for details of individuals</h2>
+<form class="navbar-form navbar-left" method="GET" role="search" action='{% url "report_person" %}'>
+    <div class="form-group">
+        <input type="text" class="form-control" placeholder="Search" name="q" value='{{ request.GET.q }}'>
+    </div>
+    <button type="submit" class="btn btn-default">Submit</button>
+</form>
+    {% for person in qs %}
+    <table class="table">
+    <tr>
+        <td class="text-left"><h2>Name: {{ person.name }}</h2></td>
+        </tr>
+    <tr>
+        <td class="text-left"><h2>DOB: {{ person.dob }}</h2></td>
+    </tr>
+    <tr>
+        <td class="text-left"><h2>Education: {{ person.education_level }}</h2></td>
+    </tr>
+    <tr>
+        <td class="text-left"><h2>Date of Joining: {{ person.date_since_joining }}</h2></td>
+    </tr>
+    <tr>
+        <td class="text-left"><h2>Contact: {{ person.contact }}</h2></td>
+    </tr>
+    </table>
+    {% endfor %}
+{% endblock %}
