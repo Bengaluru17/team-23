@@ -12,7 +12,7 @@ class PersonalInfo(models.Model):
     photo = models.ImageField(upload_to="profile/img")
     education_level = models.CharField(max_length=30)
     date_since_joining = models.DateField(auto_now_add=True, auto_now=False)
-    phone = models.IntegerField(max_length = 10)
+    contact = models.CharField(max_length = 20)
 
 
 class TrainingDetails(models.Model):

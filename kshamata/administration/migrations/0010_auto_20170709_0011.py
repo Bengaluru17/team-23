@@ -15,6 +15,6 @@ class Migration(migrations.Migration):
         migrations.AlterField(
             model_name='personalinfo',
             name='dob',
-            field=models.DateField(default='1/1/2001'),
+            field=models.DateField(default='2001-01-01'),
         ),
     ]
