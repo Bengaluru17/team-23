@@ -13,6 +13,8 @@ from django.contrib.auth import (
     authenticate,
 )
 import json 
+from .models import PersonalInfo
+
 # Create your views here.
 
 
@@ -34,4 +36,12 @@ def login(request):
     else:
         return JsonResponse({"result":404})
     return JsonResponse({"ok":"ok got it"})
+
+
+def post_data_from_app(request):
+    info = PersonalInfo()
+    info.name = request.POST.get('name', '')
+    info.dob = request.POST.get('name', '')
+
+
 

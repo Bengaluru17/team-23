@@ -8,7 +8,7 @@ from django.db import models
 class PersonalInfo(models.Model):
     uid = models.AutoField(primary_key=True)
     name = models.CharField(max_length=20)
-    dob = models.DateField(auto_now_add=False, auto_now=False, default='2001-01-01')
+    dob = models.CharField(max_length=8)
     photo = models.ImageField(upload_to="profile/img")
     education_level = models.CharField(max_length=30)
     date_since_joining = models.DateField(auto_now_add=True, auto_now=False)
