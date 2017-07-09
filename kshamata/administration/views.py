@@ -44,12 +44,15 @@ def login(request):
 
 def post_data_from_app(request):
     info = PersonalInfo()
-    info.name = request.POST.get('name', '')
+    name = request.POST.get('name', '')
+    info.name=name
     info.dob = request.POST.get('dob', '')
     info.contact = request.POST.get('phone', '')
     info.education_level = request.POST.get('bg', '')
     info.save()
+    id=PersonalInfo(name=name).uid
     info = TrainingDetails()
+    info.uid=id()
     info.vocational_skills = request.POST.get('vc', '')
     info.life_skills = request.POST.get('skill', '')
     info.save()
